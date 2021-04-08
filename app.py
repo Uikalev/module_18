@@ -31,7 +31,7 @@ def convert(message: telebot.types.Message):
         values = message.text.split(" ")
 
         if len(values) != 3:
-            raise ConvertionExcception("Слишком много параметров")
+            raise ConvertionExcception("Неверное количество параметров")
 
         quote, base, amount = values
         total_base = CurrencyConverter.convert(quote, base, amount)
